@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Navigation tooltips - fullPage.js</title>
+    <meta name="author" content="Matthew Howell" />
+    <meta name="description" content="fullPage continuous scrolling demo." />
+    <meta name="keywords"  content="fullpage,jquery,demo,scroll,loop,continuous" />
+    <meta name="Resource-type" content="Document" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link rel="stylesheet" type="text/css" href="dist/fullpage.css" />
+    <link rel="stylesheet" type="text/css" href="examples.css" />
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" />
+
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+
+    <style>
+    .fa, .fas {
+        opacity: .2;
+    }
+	#fp-nav ul li a span, 
+	.fp-slidesNav ul li a span{
+		background: white;
+	}
+    .my-arrow{
+        font-size: 4em;
+    }
+    img{ max-height: 80vh; max-width: 100%; }
+    .section, .slide {
+        background-size: cover;
+        background-attachment: fixed;
+    }
+    #section0, #section1, #section2, #section3, #slide1, #slide2 {
+        background-size: cover;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+    }
+    /*#section0{
+        background-image: url(imgs/bg1.jpg);
+    }*/
+    #section1{
+        background-image: url(imgs/bg2.jpg);
+        
+    }
+    #section2{
+        background-image: url(imgs/bg3.jpg);
+        background-attachment: fixed;
+    }
+    #section3{
+        background-image: url(imgs/bg4.jpg);
+        background-attachment: fixed;
+    }
+    #section3 h1{
+        color: #000;
+    }
+    #slide1{
+        background-image: url(imgs/bg1.jpg);
+    }
+    #slide2{
+        background-image: url(imgs/bg5.jpg);
+    }
+
+    </style>
+</head>
+<body>
+
+<ul id="menu">
+    <li data-menuanchor="page1" class="active"><a href="#page1">First slide</a></li>
+    <li data-menuanchor="page2"><a href="#page2">Second slide</a></li>
+    <li data-menuanchor="page3"><a href="#page3">Third slide</a></li>
+    <!-- <li data-menuanchor="page4"><a href="#page4">Third slide</a></li>
+    <li data-menuanchor="page5"><a href="#page5">Third slide</a></li>
+    <li data-menuanchor="page6"><a href="#page6">Third slide</a></li> -->
+
+</ul>
+
+<div id="fullpage">
+    <div class="section " id="section0">
+        <div class="slide" id="slide1">
+            <div class="container tongquan">
+                <h2>Section 2</h2>
+                <div class="row">
+
+                    <div class="col-md-6">
+                        <img src="imgs/bg2.jpg">
+                    </div>
+                    <div class="col-md-6">
+                        ádasd
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slide" id="slide2">
+            <h1>Cool uh?</h1>
+            <p>We are now using Font Awesome icons instead</p>
+        </div>
+    </div>
+    <div class="section" id="section1">
+        <h1>Section 2</h1>
+    </div>
+    <div class="section" id="section2">
+        <h1>Section 3</h1>
+    </div>
+</div>
+
+<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="dist/fullpage.js"></script>
+<script type="text/javascript" src="examples.js"></script>
+<script type="text/javascript">
+    var myFullpage = new fullpage('#fullpage', {
+        sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE'],
+        anchors: ['page1', 'page2', 'page3'],
+        // verticalCentered: false,
+        navigation:true,
+        navigationTooltips: ['Tổng quan', 'Vị trí', 'Tiện ích'],
+        showActiveTooltip: true,
+        menu: '#menu', // menu
+        continuousVertical: true, // lăn chuột quay vòng lên đ
+        // controlArrows: false, // ẩn nút slider
+        controlArrows: true, // hiện nút slider
+        controlArrowsHTML: ['<div class="my-arrow"><i class="fas fa-arrow-alt-circle-left"></i></i></div>','<div class="my-arrow"><i class="fas fa-arrow-alt-circle-right"></i></div>',], // sửa icon slider
+        slidesNavigation: true, // chấm tròn bên dưới slider
+    });
+</script>
+
+</body>
+</html>
